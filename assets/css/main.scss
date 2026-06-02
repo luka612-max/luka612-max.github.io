@@ -1,0 +1,85 @@
+---
+---
+@charset "utf-8";
+
+// 1. Define a Formal Color Palette
+$primary-color: #1a2a3a !default;      // Deep Oxford Blue for headers and navigation
+$text-color: #24292e !default;         // Gunmetal Gray for sharp, readable text
+$muted-text-color: #707a82 !default;   // Professional Slate for secondary text
+$link-color: #29527a !default;         // Subdued Navy for links
+$link-color-hover: #4a77a3 !default;   // Lighter Steel Blue on hover
+$background-color:#f4f6f8 !default;   // Crisp Off-White to reduce screen glare
+
+// 2. Import the base Minimal Mistakes theme
+@import "minimal-mistakes";
+
+// 3. Add Custom Structural Elegance (Optional but recommended)
+// Adds a subtle dividing line to the sidebar for a more structured, document-like feel
+.sidebar {
+  border-right: 1px solid #e1e8ed;
+  padding-right: 1.5em;
+}
+
+// Gives code blocks a slightly sharper, technical appearance
+// Dark theme for code blocks
+div.highlighter-rouge, 
+figure.highlight,
+.highlight pre {
+  background: #1e1e1e !important; /* Dark charcoal background */
+  color: #f8f8f2 !important;      /* Light base text color */
+  border: none !important;        /* Removes the light border */
+  border-radius: 6px !important;  /* Smooth rounded corners */
+}
+
+// Force single pages without sidebars to center and remain narrow for readability
+.narrow-layout .page {
+  float: none !important;
+  max-width: 800px !important; 
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 2em !important;
+  padding-right: 2em !important;
+}
+
+// Custom layout strictly for stretching the 3 project pages
+.wide-project-layout .page {
+  float: none !important;
+  /* Setting a very high max-width or using a percentage stretches the content */
+  max-width: 1200px !important; 
+  width: 92% !important; 
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 2em !important;
+  padding-right: 2em !important;
+}
+
+// 4. Force the Formal Background globally across ALL nested containers
+body, 
+html,
+#main,
+.initial-content,
+.page,
+.masthead,
+.masthead__inner-wrap,
+.greedy-nav {
+  background-color: #e2e8f0 !important; 
+}
+
+// Remove the border line under the header for a seamless look
+.masthead {
+  border-bottom: none !important;
+}
+
+// 5. Distinct Footer Styling
+.page__footer {
+  background-color: #cbd5e1 !important; /* A slightly deeper slate gray */
+  border-top: 1px solid #94a3b8 !important; /* Adds a crisp, formal line above the footer */
+  margin-top: 3em !important; /* Gives some breathing room before the footer starts */
+}
+
+// Ensure the inner text containers in the footer don't force their own white backgrounds
+.page__footer-copyright,
+.page__footer-copyright a {
+  background-color: transparent !important;
+}
+
